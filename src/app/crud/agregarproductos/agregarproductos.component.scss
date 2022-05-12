@@ -1,0 +1,54 @@
+section{
+  margin: 30px 0;
+}
+
+.centrado {
+  margin: 0 auto;
+  max-width: 1200px;
+  h1 {
+      text-align: left;
+      font-size: 22px;
+      font-weight: 700;
+  }
+}
+
+.detalles-producto {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  column-gap: 20px;
+  border: 2px solid #06BEE1;
+  padding: 20px;
+  form {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+
+      input[type="text"] {
+          border: 1px solid #06BEE1
+      }
+  }
+}
+
+.boton {
+  margin: 30px 0;
+  text-align: center;
+  .btn-1 {
+      background-color: #33C2A1;
+      color: #fff;
+  }
+}
+
+.tabla {
+  margin: 0 auto;
+}
+
+.tabla-color {
+  background-color: #06BEE1;
+  color: #fff;
+  th {
+      padding: 20px;
+  }
+}
+
+.iconos a{
+  margin: 0 5px;
+}

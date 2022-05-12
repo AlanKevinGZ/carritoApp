@@ -1,38 +1,8 @@
-<div class="container">
-  <div class="row mar">
-    <div class="four columns">
-      <h1>Store</h1>
-    </div>
-    <div class="two columns u-pull-right">
-      <ul>
-        <li class="submenu">
-          <img src="../../../assets/img/cart.png" id="img-carrito" />
-          <div id="carrito">
-            <table id="lista-carrito" class="u-full-width">
-              <thead>
-                <tr>
-                  <th>Imagen</th>
-                  <th>Nombre</th>
-                  <th>Precio</th>
-                  <th>Cantidad</th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody></tbody>
-            </table>
-
-            <a href="#" id="vaciar-carrito" class="button u-full-width"
-              >Vaciar Carrito</a
-            >
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
+<app-navbar></app-navbar>
 
 <div id="hero">
   <div class="container">
+
     <div class="row">
       <div class="six columns">
         <div class="contenido-hero">
@@ -52,143 +22,211 @@
   </div>
 </div>
 
-<div id="lista-cursos" class="container">
-  <h1 id="encabezado" class="encabezado">Cursos En Línea</h1>
-  <div class="row">
-    <div class="four columns">
-      <div class="card">
-        <img
-          src="../../../assets/img/curso1.jpg"
-          class="imagen-curso u-full-width"
-        />
-        <div class="info-card">
-          <h4>Producto 1</h4>
-          <p>Descripción</p>
+<div id="lista-cursos" class="container2">
+  <h2 id="encabezado" class="encabezado">Productos</h2>
 
-          <p class="precio"><span class="u-pull-right">$15</span></p>
-          <a
-            href="#"
-            class="u-full-width button-primary button input agregar-carrito"
-            data-id="1"
-            >Agregar Al Carrito</a
-          >
-        </div>
-      </div>
-      <!--.card-->
-    </div>
-    <div class="four columns">
-      <div class="card">
-        <img
-          src="../../../assets/img/curso2.jpg"
-          class="imagen-curso u-full-width"
-        />
-        <div class="info-card">
-          <h4>Producto 2</h4>
-          <p>Descripción</p>
 
-          <p class="precio"><span class="u-pull-right">$15</span></p>
-          <a
-            href="#"
-            class="u-full-width button-primary button input agregar-carrito"
-            data-id="1"
-            >Agregar Al Carrito</a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="four columns">
-      <div class="card">
-        <img
-          src="../../../assets/img/curso3.jpg"
-          class="imagen-curso u-full-width"
-        />
-        <div class="info-card">
-          <h4>Producto 3</h4>
-          <p>Descripción</p>
+  <div class="col_op">
+  
+  <div class="filtros">
+    <h3>Filtros</h3>
+    <form action="">
+      <h3>Precio</h3>
+      <div class="opciones">  
+        <input type="radio" id="15" name="drone" value="15">
+        <label for="15" id="15">$15</label>
 
-          <p class="precio"><span class="u-pull-right">$15</span></p>
-          <a
-            href="#"
-            class="u-full-width button-primary button input agregar-carrito"
-            data-id="1"
-            >Agregar Al Carrito</a
-          >
-        </div>
+        <input type="radio" id="10" name="drone" value="100">
+        <label for="10" id="10">$100</label>
       </div>
-      <!--.card-->
-    </div>
+
+     
+
+      <div class="categoria">
+        <h3>Categoria</h3>
+        <div class="col_cat">
+          <div class="cat_1">
+            <input type="radio" id="c#" name="drone" value="c#">
+            <label for="c#" id="c#">C#</label>
+          </div>
+
+          <div class="cat_1">
+            <input type="radio" id="php" name="drone" value="php">
+            <label for="php" id="php">PHP</label>
+          </div>
+
+          <div class="cat_1">
+            <input type="radio" id="angular" name="drone" value="angular">
+            <label for="angular" id="angular">Angular</label>
+          </div>
+
+
+        </div>
+       
+
+      
+      </div>
+
+      <input type="submit" value="Filtrar" class="btn">
+     
+    </form>
   </div>
-  <!--.row-->
-  <div class="row">
-    <div class="four columns">
-      <div class="card">
-        <img
-          src="../../../assets/img/curso4.jpg"
-          class="imagen-curso u-full-width"
-        />
-        <div class="info-card">
-          <h4>Producto 4</h4>
-          <p>Descripción</p>
 
-          <p class="precio"><span class="u-pull-right">$15</span></p>
-          <a
-            href="#"
-            class="u-full-width button-primary button input agregar-carrito"
-            data-id="1"
-            >Agregar Al Carrito</a
-          >
+  
+  <div class="col_product">
+
+    <div class="row">
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso1.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 1</h4>
+            <p>Descripción</p>
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito
+              </a
+            >
+            <a  [routerLink]="['/carrito/dd']" >Ver detalles</a>
+          </div>
+        </div>
+        <!--.card-->
+      </div>
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso2.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 2</h4>
+            <p>Descripción</p>
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito</a>
+              <a  [routerLink]="['/carrito/dd']" >Ver detalles</a>
+          </div>
         </div>
       </div>
-      <!--.card-->
-    </div>
-    <div class="four columns">
-      <div class="card">
-        <img
-          src="../../../assets/img/curso5.jpg"
-          class="imagen-curso u-full-width"
-        />
-        <div class="info-card">
-          <h4>Producto 5</h4>
-          <p>Descripción</p>
-
-
-          <p class="precio"><span class="u-pull-right">$15</span></p>
-          <a
-            href="#"
-            class="u-full-width button-primary button input agregar-carrito"
-            data-id="1"
-            >Agregar Al Carrito</a
-          >
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso3.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 3</h4>
+            <p>Descripción</p>
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito</a
+            >
+          </div>
         </div>
+        <!--.card-->
       </div>
-      <!--.card-->
     </div>
-    <div class="four columns">
-      <div class="card">
-        <img
-          src="../../../assets/img/curso1.jpg"
-          class="imagen-curso u-full-width"
-        />
-        <div class="info-card">
-          <h4>Producto 6</h4>
-          <p>Descripción</p>
-
-
-          <p class="precio"><span class="u-pull-right">$15</span></p>
-          <a
-            href="#"
-            class="u-full-width button-primary button input agregar-carrito"
-            data-id="1"
-            >Agregar Al Carrito</a
-          >
+    <!--.row-->
+    <div class="row">
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso4.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 4</h4>
+            <p>Descripción</p>
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito</a
+            >
+          </div>
         </div>
+        <!--.card-->
       </div>
-      <!--.card-->
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso5.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 5</h4>
+            <p>Descripción</p>
+  
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito</a
+            >
+          </div>
+        </div>
+        <!--.card-->
+      </div>
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso1.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 6</h4>
+            <p>Descripción</p>
+  
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito</a
+            >
+          </div>
+        </div>
+        <!--.card-->
+      </div>
     </div>
+    <!--.row-->
   </div>
-  <!--.row-->
-</div>
 
+
+
+
+
+  </div>
+
+  
+
+
+
+  </div>
+
+
+
+ 
 <footer id="footer" class="footer">
   <div class="cen">
     <div class="row ">
