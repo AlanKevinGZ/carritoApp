@@ -13,6 +13,8 @@ export class CarritoComponent implements OnInit {
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
+    this.arrProduct=this.productService.getProductos();
+    console.log(this.arrProduct);
     
   }
 
