@@ -8,11 +8,9 @@ import { debounceTime } from 'rxjs';/* rxjs para el tiempo */
   styleUrls: ['./agregarproductos.component.scss']
 })
 export class AgregarproductosComponent implements OnInit {
- 
 
+  registrar:FormGroup=new FormGroup({
 
-  formulario:FormGroup=new FormGroup({
-   
     nombre:new FormControl('',[
       Validators.required,
       Validators.minLength(3),
@@ -25,13 +23,13 @@ export class AgregarproductosComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
     ]),
-     costo:new FormControl('',[this.costoValidator]),
-
-     descrip:new FormControl('',[
+    cost:new FormControl('',[
+      this.costoValidator]),
+    description:new FormControl('',[
       Validators.required,
       Validators.minLength(20),
     ]),
-    
+
   });
 
   constructor() { }
@@ -40,19 +38,18 @@ export class AgregarproductosComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.formulario.value);
+    console.log(this.registrar.value);
   }
   costoValidator(formControl:any){
     let value=formControl.value;
-
     let max=1000;
     let min=18;
     if (value >= min) {
       return null;
     }else{
-      return {costo:{max,min}};
+      return {cost:{max,min}};
     }
-   
+
   }
 
 }

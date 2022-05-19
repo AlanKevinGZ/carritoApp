@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class ProductService {
 
-  
+
   arrProductos: any = [
-    { id: 1, prducto: 'PHP', decripcion: 'producto 1', costo: 120, img: '../../assets/img/curso1.jpg' },
+    { id: 1, producto: 'PHP', decripcion: 'producto 7', costo: 120, img: '../../assets/img/curso7.jpg' },
   ];
 
   constructor() {}

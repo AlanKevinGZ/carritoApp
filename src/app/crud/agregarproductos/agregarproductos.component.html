@@ -2,7 +2,7 @@
   <div class="centrado">
     <h1>Agregar productos</h1>
     <div class="detalles-producto">
-      <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <form [formGroup]="registrar" (ngSubmit)="onSubmit()">
         <label for="name">Nombre: </label>
         <input type="text" id="nombre" name="nombre" formControlName="nombre" />
 
@@ -13,50 +13,43 @@
         <input type="text" id="sub-category" formControlName="subcategory"/>
 
         <label for="price">Precio: </label>
-        <input type="number" id="price" formControlName="costo"  />
-      
+        <input type="number" id="price" formControlName="cost"  />
 
         <label for="des-gen">Descripcion general: </label>
-       <textarea name="" id="" cols="30" rows="10" formControlName="descrip"></textarea>
+        <textarea name="" id="" cols="30" rows="10" formControlName="description"></textarea>
 
        <label for="img">Agregar Imagen</label>
        <input type="file" name="" id="img">
 
-        <input type="submit" class="btn btn-primary" value="Agregar"  
-        [disabled]="!formulario.valid" />
-
+        <input type="submit" class="btn btn-primary" value="Agregar"
+        [disabled]="!registrar.valid" />
       </form>
 
       <div class="imagen-producto">
-       
         <img src="../../../assets/img/caja.png" alt="Imagen producto" title="Imagen producto">
+      </div>
     </div>
-    </div>
+
     <!-- Mostrar los errores en pantalla  -->
-    <div class="error" *ngIf="formulario.controls['nombre'].errors?.['required']  && formulario.controls['nombre'].touched">
+    <div class="error" *ngIf="registrar.controls['nombre'].errors?.['required']  && registrar.controls['nombre'].touched">
       <p>*El campo nombre es obligatorio</p>
     </div>
-    <div class="error" *ngIf="formulario.controls['category'].errors?.['required']  && formulario.controls['category'].touched">
+    <div class="error" *ngIf="registrar.controls['category'].errors?.['required']  && registrar.controls['category'].touched">
       <p>*El campo categoria es obligatorio</p>
     </div>
-    <div class="error" *ngIf="formulario.controls['subcategory'].errors?.['required']  && formulario.controls['subcategory'].touched">
+    <div class="error" *ngIf="registrar.controls['subcategory'].errors?.['required']  && registrar.controls['subcategory'].touched">
       <p>*El campo Subcategoria es obligatorio</p>
     </div>
-    
-    <div class="error" *ngIf="formulario.controls['costo'].errors?.['costo']  && formulario.controls['costo'].touched">
+    <div class="error" *ngIf="registrar.controls['cost'].errors?.['cost']  && registrar.controls['cost'].touched">
       <p> El precio debe ser igual o mayor a 50  </p>
     </div>
-    <div class="error" *ngIf="formulario.controls['descrip'].errors?.['required']  && formulario.controls['descrip'].touched">
+    <div class="error" *ngIf="registrar.controls['description'].errors?.['required']  && registrar.controls['description'].touched">
       <p>*El campo Descripcion  es obligatorio</p>
     </div>
-  
     <!-- fin errores -->
-
   </div>
 
-  
 </section>
-
 
 <section>
   <div class="centrado">

@@ -8,15 +8,15 @@ import { ProductService } from '../../services/product.service';
 })
 export class CarritoComponent implements OnInit {
 
-  arrProduct:any=[];
+  armProduct:any=[];
 
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
-    this.arrProduct=this.productService.getProductos();
-    console.log(this.arrProduct);
-    
+    this.armProduct=this.productService.getProductos();
+    console.log(this.armProduct);
+
   }
 
-  
+
 }
