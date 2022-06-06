@@ -1,204 +1,101 @@
 <section>
   <div class="centrado">
-      <h1>Agregar productos</h1>
-      <div class="detalles-producto">
-          <form action="">
-              <label for="name">Nombre: </label>
-              <input type="text" id="name">
+    <h1>Agregar productos</h1>
+    <div class="detalles-producto">
+      <form [formGroup]="formulario" >
+        <label for="name">Nombre: </label>
+        <input type="text" id="nombre" name="nombre" formControlName="nombre_producto" />
 
-              <label for="category">Categoria: </label>
-              <input type="text" id="category">
+        <label for="category">Categoria: </label>
+        <input type="text" id="category" formControlName="categoria_producto"/>
 
-              <label for="sub-category">Subcategoria: </label>
-              <input type="text" id="sub-category">
+        <!-- <label for="sub-category">Subcategoria: </label>
+        <input type="text" id="sub-category" formControlName="subcategory"/>
+ -->
+        <label for="price">Precio: </label>
+        <input type="number" id="price" formControlName="precio_producto"  />
+      
 
-              <label for="price">Precio: </label>
-              <input type="text" id="price">
+        <label for="des-gen">Descripcion general: </label>
+       <textarea name="" id="" cols="30" rows="10" formControlName="descripbr_producto"></textarea>
 
-              <label for="cant">Cantidad: </label>
-              <input type="text" id="cant">
+        <label for="img">Agregar Imagen</label>
+       <input type="file" name="" id="img"> 
 
-              <label for="des-min">Descripcion miniatura: </label>
-              <input type="text" id="des-min">
+        <input type="submit" class="btn btn-primary" value="Agregar"  
+         (click)="onSubmit()" />
 
-              <label for="des-gen">Descripcion general: </label>
-              <input type="text" id="des-gen">
-          </form>
-          <div class="imagen-producto">
-              <label for="img">Agregar Imagen
-              </label>
-              <input type="file" name="" id="img">
-              <img src="../../../assets/img/caja.png" alt="Imagen producto" title="Imagen producto">
-          </div>
-      </div>
+      </form>
 
-      <div class="boton">
-          <button class="btn-1">Agregar</button>
-      </div>
+      <div class="imagen-producto">
+       
+        <img src="../../../assets/img/caja.png" alt="Imagen producto" title="Imagen producto">
+    </div>
+    </div>
+    <!-- Mostrar los errores en pantalla  -->
+    <div class="error" *ngIf="formulario.controls['nombre_producto'].errors?.['required']  && formulario.controls['nombre_producto'].touched">
+      <p>*El campo nombre es obligatorio</p>
+    </div>
+    <div class="error" *ngIf="formulario.controls['categoria_producto'].errors?.['required']  && formulario.controls['categoria_producto'].touched">
+      <p>*El campo categoria es obligatorio</p>
+    </div>
+   <!--  <div class="error" *ngIf="formulario.controls['subcategory'].errors?.['required']  && formulario.controls['subcategory'].touched">
+      <p>*El campo Subcategoria es obligatorio</p>
+    </div> -->
+    
+    <div class="error" *ngIf="formulario.controls['precio_producto'].errors?.['precio_producto']  && formulario.controls['precio_producto'].touched">
+      <p> El precio debe ser igual o mayor a 50  </p>
+    </div>
+    <div class="error" *ngIf="formulario.controls['descripbr_producto'].errors?.['required']  && formulario.controls['descripbr_producto'].touched">
+      <p>*El campo Descripcion  es obligatorio</p>
+    </div>
+  
+    <!-- fin errores -->
+
   </div>
+
+  
 </section>
 
+<!-- tabla -->
 <section>
   <div class="centrado">
-      <table class="tabla">
-          <tr class="tabla-color">
-              <th>Nombre</th>
-              <th>Categoria</th>
-              <th>Sub-Categoria</th>
-              <th>Precio</th>
-              <th>Cantidad</th>
-              <th>Modificar/Eliminar</th>
-          </tr>
-          <tr>
-              <td>Producto 1</td>
-              <td>Curso</td>
-              <td>C#</td>
-              <td>$150</td>
-              <td>1</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-          <tr>
-              <td>Producto 2</td>
-              <td>Curso</td>
-              <td>Java</td>
-              <td>$120</td>
-              <td>2</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-          <tr>
-              <td>Producto 3</td>
-              <td>Curso</td>
-              <td>JavaScript</td>
-              <td>$140</td>
-              <td>1</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-          <tr>
-              <td>Producto 4</td>
-              <td>Curso</td>
-              <td>Python</td>
-              <td>$150</td>
-              <td>1</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-          <tr>
-              <td>Producto 5</td>
-              <td>Curso</td>
-              <td>VisualBasic</td>
-              <td>$100</td>
-              <td>1</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-          <tr>
-              <td>Producto 6</td>
-              <td>Curso</td>
-              <td>C</td>
-              <td>$180</td>
-              <td>1</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-          <tr>
-              <td>Producto 7</td>
-              <td>Curso</td>
-              <td>C++</td>
-              <td>$190</td>
-              <td>1</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-          <tr>
-              <td>Producto 8</td>
-              <td>Curso</td>
-              <td>Kotlin</td>
-              <td>$280</td>
-              <td>1</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-          <tr>
-              <td>Producto 9</td>
-              <td>Curso</td>
-              <td>Go</td>
-              <td>$190</td>
-              <td>1</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-          <tr>
-              <td>Producto 10</td>
-              <td>Curso</td>
-              <td>Angular</td>
-              <td>$199</td>
-              <td>1</td>
-              <td class="iconos">
-                  <a href="#">
-                      <img src="../../../assets/img/editar.png" alt="Modificar" width="30">
-                  </a>
-                  <a href="#">
-                      <img src="../../../assets/img/bote-de-basura.png" alt="Eliminar" width="30">
-                  </a>
-              </td>
-          </tr>
-      </table>
+    <table class="tabla">
+      <tr class="tabla-color">
+        <th>Nombre</th>
+        <th>Categoria</th>
+        <th>Sub-Categoria</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Imagen</th>
+        <th>Modificar/Eliminar</th>
+      </tr>
+      <tr *ngFor="let item of arrProductos">
+        <td>{{item.nombre_producto}} </td>
+        <td>{{item.categoria_producto}}</td>
+        <td>C#</td>
+        <td>${{item.precio_producto}}</td>
+        <td>1</td>
+        <td><img [src]="item.imagen" alt="" /></td>
+        <td class="iconos">
+          <button href="#">
+            <img
+              src="../../../assets/img/editar.png"
+              alt="Modificar"
+              width="30"
+            />
+          </button>
+          <button href="#">
+            <img
+              src="../../../assets/img/bote-de-basura.png"
+              alt="Eliminar"
+              width="30"
+            />
+          </button>
+        </td>
+      </tr>
+      
+       
+    </table>
   </div>
 </section>

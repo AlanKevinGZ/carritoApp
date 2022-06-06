@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AgregarproductosComponent } from './agregarproductos/agregarproductos.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,10 +10,11 @@ import { AgregarproductosComponent } from './agregarproductos/agregarproductos.c
     AgregarproductosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
   ],
-  exports: [
-    AgregarproductosComponent
-  ]
+  
 })
 export class CrudModule { }

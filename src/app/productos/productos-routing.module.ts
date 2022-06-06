@@ -8,8 +8,9 @@ import { AgregarproductosComponent } from '../crud/agregarproductos/agregarprodu
 const routes: Routes = [
   { path:'', pathMatch:'full', redirectTo:'carrito'},
   { path:'carrito', component:CarritoComponent},
+  {path: 'carrito/crud', component:AgregarproductosComponent},
   {path:'carrito/:id', component:DetallesComponent},
-  {path: 'agregarproductos', component:AgregarproductosComponent}
+ 
 ];
 
 @NgModule({

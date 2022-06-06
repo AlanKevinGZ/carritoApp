@@ -10,9 +10,21 @@ export class CarritoComponent implements OnInit {
 
   arrProduct:any=[];
 
-  constructor(private productService:ProductService) { }
+  constructor(private serviceproductos:ProductService) { }
 
   ngOnInit(): void {
+
+    /* obtenemos los productos */
+    this.serviceproductos.getProductos().subscribe((productos)=>{
+      this.arrProduct=productos;
+      console.log(this.arrProduct);
+      
+    })
+   
+  }
+
+  obtenerID(id:number | string){
+    console.log(id);
     
   }
 

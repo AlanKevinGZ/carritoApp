@@ -28,14 +28,6 @@ section{
   }
 }
 
-.boton {
-  margin: 30px 0;
-  text-align: center;
-  .btn-1 {
-      background-color: #33C2A1;
-      color: #fff;
-  }
-}
 
 .tabla {
   margin: 0 auto;
@@ -51,4 +43,22 @@ section{
 
 .iconos a{
   margin: 0 5px;
+}
+
+input.ng-valid{
+  border: 1px solid green !important;
+}
+
+input.ng-invalid{
+  border: 1px solid red !important;
+}
+.btn{
+  background-color: #06BEE1;
+  color: white;
+}
+.error{
+  color: red;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 1rem;
 }
