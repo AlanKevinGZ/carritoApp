@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs';/* rxjs para el tiempo */
+=======
+>>>>>>> main
 
 @Component({
   selector: 'app-agregarproductos',
@@ -8,6 +11,7 @@ import { debounceTime } from 'rxjs';/* rxjs para el tiempo */
   styleUrls: ['./agregarproductos.component.scss']
 })
 export class AgregarproductosComponent implements OnInit {
+<<<<<<< HEAD
  
 
 
@@ -33,12 +37,15 @@ export class AgregarproductosComponent implements OnInit {
     ]),
     
   });
+=======
+>>>>>>> main
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+<<<<<<< HEAD
   onSubmit(){
     console.log(this.formulario.value);
   }
@@ -55,4 +62,6 @@ export class AgregarproductosComponent implements OnInit {
    
   }
 
+=======
+>>>>>>> main
 }
