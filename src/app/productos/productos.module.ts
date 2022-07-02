@@ -8,7 +8,6 @@ import { MetodopagoComponent } from './metodopago/metodopago.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { FooterComponent } from './template/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -23,7 +22,6 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     ProductosRoutingModule,
-    HttpClientModule,
     RouterModule,
   ]
 })

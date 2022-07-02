@@ -75,55 +75,158 @@
   
   <div class="col_product">
 
-    <div class="row columnas">
-      
-      <div class="" *ngFor="let item of arrProduct">
+    <div class="row">
+      <div class="four columns">
         <div class="card">
           <img
-            [src]="item.imagen"
+            src="../../../assets/img/curso1.jpg"
             class="imagen-curso u-full-width"
           />
           <div class="info-card">
-            <h4>{{item.nombre_producto}} </h4>
-            <p>{{item.descripbr_producto}} </p>
+            <h4>Producto 1</h4>
+            <p>Descripción</p>
   
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito
+              </a
+            >
+            <a  [routerLink]="['/carrito/dd']" >Ver detalles</a>
+          </div>
+        </div>
+        <!--.card-->
+      </div>
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso2.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 2</h4>
+            <p>Descripción</p>
   
-            <p class="precio"><span class="u-pull-right">${{item.precio_producto}} </span></p>
-            <span>Categoia: {{item.categoria_producto}} </span>
+            <p class="precio"><span class="u-pull-right">$15</span></p>
             <a
               href="#"
               class="u-full-width button-primary button input agregar-carrito"
               data-id="1"
               >Agregar Al Carrito</a>
-              <a [routerLink]="['/carrito/',item.id]" >Ver Producto</a>
+              <a  [routerLink]="['/carrito/dd']" >Ver detalles</a>
+          </div>
+        </div>
+      </div>
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso3.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 3</h4>
+            <p>Descripción</p>
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito</a
+            >
           </div>
         </div>
         <!--.card-->
       </div>
-      
+    </div>
+    <!--.row-->
+    <div class="row">
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso4.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 4</h4>
+            <p>Descripción</p>
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito</a
+            >
+          </div>
+        </div>
+        <!--.card-->
+      </div>
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso5.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 5</h4>
+            <p>Descripción</p>
+  
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito</a
+            >
+          </div>
+        </div>
+        <!--.card-->
+      </div>
+      <div class="four columns">
+        <div class="card">
+          <img
+            src="../../../assets/img/curso1.jpg"
+            class="imagen-curso u-full-width"
+          />
+          <div class="info-card">
+            <h4>Producto 6</h4>
+            <p>Descripción</p>
+  
+  
+            <p class="precio"><span class="u-pull-right">$15</span></p>
+            <a
+              href="#"
+              class="u-full-width button-primary button input agregar-carrito"
+              data-id="1"
+              >Agregar Al Carrito</a
+            >
+          </div>
+        </div>
+        <!--.card-->
+      </div>
+    </div>
     <!--.row-->
   </div>
 
-  </div>
+
+
 
 
   </div>
-
-<hr>
-<h3>Consumir back-server</h3>
-<!-- ver productos ApI -->
-  <div class="ejemplo">
-   {{arrProduct | json}}   
-  </div>
-
 
   
 
 
-  <hr>
 
-  
+  </div>
 
+
+
+ 
 <footer id="footer" class="footer">
   <div class="cen">
     <div class="row ">

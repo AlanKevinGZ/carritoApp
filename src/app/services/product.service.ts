@@ -1,36 +1,36 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
+
 export class ProductService {
-
   
+  arrProductos:any=[
+    {id:1,titulo:'PHP',descripcion:'productos'  },
+    {id:2,titulo:'C#',descripcion:'productos'  }
+  ]
   
-  constructor(private http:HttpClient) {}
+  constructor() {
+    
+   }
 
-  /* obtener todos los productos del back */
-  getProductos() {
-    return this.http.get('http://localhost:3000/api/productos')
-  }
+   getProdudctos(){
+    return this.arrProductos;
+   }
 
-  /* obtenemos por id */
-  getProductID(id:number | string){
-    return this.http.get(`http://localhost:3000/api/productos${id}`);
-  }
+   buscarProductos(id:any){
+  /*   console.log(this.arrProductos[id]); */
+    this.arrProductos.forEach((e:any) => {
+      if (e.id===id) {
+        console.log(e);
+        return;
+        
+      }
+    });
+    
+   }
 
-  saveProduct(product:any){
-    return this.http.post(`http://localhost:3000/api/productos`,product)
-  }
-
-  delete(id:number | string){
-    return this.http.delete(`http://localhost:3000/api/productos${id}`)
-  }
-
-  updateProduct(id:number | string,update:any):Observable<any>{
-    return this.http.put(`http://localhost:3000/api/productos${id}`,update)
-  }
+ 
 
 }
