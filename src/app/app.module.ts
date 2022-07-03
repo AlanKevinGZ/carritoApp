@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductosModule } from './productos/productos.module';
 import { CrudModule } from './crud/crud.module';
+import {LoginModule} from "./login/login.module";
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { CrudModule } from './crud/crud.module';
     AppRoutingModule,
     ProductosModule,
     CrudModule,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]
