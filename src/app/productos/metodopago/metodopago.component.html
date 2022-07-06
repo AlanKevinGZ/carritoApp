@@ -1,1 +1,104 @@
-<p>metodopago works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card p-3">
+        <div class="card-body border p-0">
+          <div class="collapse p-3 pt-0" id="collapseExample">
+            <div class="row">
+              <div class="col-8">
+                <p class="h4 mb-0">Resumen</p>
+                <p class="mb-0">
+                  <span class="fw-bold">Productos: </span>
+                    
+                </p>
+                <ul *ngFor="let item of arrPro">
+                    <li>{{item.nombre_producto}}(x{{item.cantidadT}}) 
+                        ${{item.precio_producto}} </li>
+                   
+                  </ul>
+                <p class="mb-0">
+                  <span class="fw-bold">Price:</span
+                  ><span class="c-green">:${{total}} </span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body border p-0">
+          <div class="collapse show p-3 pt-0" id="collapseExample">
+            <div class="row">
+              <div class="col-lg-7">
+                <form action="" class="form">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="form__div">
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder=""
+                          [(ngModel)]="card"
+                          name="card"
+                        />
+                        <label for="" class="form__label">Card Number</label>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                      <div class="form__div">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=" "
+                          [(ngModel)]="fecha"
+                          name="fecha"
+                        />
+                        <label for="" class="form__label">MM / yy</label>
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                      <div class="form__div">
+                        <input
+                          type="password"
+                          class="form-control"
+                          placeholder=" "
+                          [(ngModel)]="cvv"
+                          name="cvv"
+                        />
+                        <label for="" class="form__label">cvv code</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form__div">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder=" "
+                          [(ngModel)]="cardName"
+                          name="cardName"
+                        />
+                        <label for="" class="form__label"
+                          >name on the card</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" (click)="pagar()">Sumbit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="btn btn-primary payment">Make Payment</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <p> {{factura}}</p>
+</div>

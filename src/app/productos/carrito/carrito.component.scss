@@ -1,3 +1,14 @@
+.vermas{
+    color: black;
+    font-weight: bold;
+}
+
+.columnas{
+   gap: 2rem;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+}
+
 .container2{
     max-width: 120rem;
     margin: 0 auto;
@@ -69,4 +80,16 @@ form{
     width: 100%;
     margin-top: 1rem;
     color: white;
+}
+
+footer{
+background-color: black;
+padding: 2rem 0px;
+text-align: center;
+p{
+    margin: 1rem 0px;
+    a{
+        text-decoration: none;
+    }
+}
 }

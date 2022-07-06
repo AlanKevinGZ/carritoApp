@@ -8,6 +8,8 @@ import { MetodopagoComponent } from './metodopago/metodopago.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './template/navbar/navbar.component';
 import { FooterComponent } from './template/footer/footer.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { FooterComponent } from './template/footer/footer.component';
   imports: [
     CommonModule,
     ProductosRoutingModule,
+    HttpClientModule,
     RouterModule,
+    FormsModule,
   ]
 })
 export class ProductosModule { }

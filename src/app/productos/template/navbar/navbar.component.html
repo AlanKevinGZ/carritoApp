@@ -6,7 +6,8 @@
     <div class="two columns u-pull-right">
       <ul>
         <li class="submenu">
-          <img src="../../../assets/img/cart.png" id="img-carrito" />
+          <img src="../../../assets/img/cart.png" id="img-carrito" 
+          (mouseenter)="sendMessage()"   />
           <div id="carrito">
             <table id="lista-carrito" class="u-full-width">
               <thead>
@@ -15,17 +16,24 @@
                   <th>Nombre</th>
                   <th>Precio</th>
                   <th>Cantidad</th>
-                  <th></th>
+                 
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                  <tr *ngFor="let item of arrProduct">
+                    <td><img [src]="item.imagen" alt="" width="100px"></td>
+                    <td>{{item.nombre_producto}}</td>
+                    <td>${{item.precio_producto}}</td>
+                    <td>{{item.cantidadT}} </td>
+                  </tr>
+              </tbody>
             </table>
 
             <a href="#" id="vaciar-carrito" class="button u-full-width"
               >Vaciar Carrito</a>
               <a href="#" id="vaciar-carrito" class="button u-full-width"
               >Proceder a Pagar</a>
-              <p>Total:$0</p>
+              <p>Total:${{total}} </p>
           </div>
         </li>
       </ul>

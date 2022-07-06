@@ -9,18 +9,21 @@
         <label for="category">Categoria: </label>
         <input type="text" id="category" formControlName="categoria_producto"/>
 
-        <!-- <label for="sub-category">Subcategoria: </label>
-        <input type="text" id="sub-category" formControlName="subcategory"/>
- -->
+        <label for="sub-category">Subcategoria: </label>
+       <input type="text" id="sub-category" formControlName="sub_categoria"/>
+ 
         <label for="price">Precio: </label>
         <input type="number" id="price" formControlName="precio_producto"  />
+
+        <label for="price">Cantidad: </label>
+        <input type="number" id="price" formControlName="cantidad"  />
       
 
         <label for="des-gen">Descripcion general: </label>
        <textarea name="" id="" cols="30" rows="10" formControlName="descripbr_producto"></textarea>
 
         <label for="img">Agregar Imagen</label>
-       <input type="file" name="" id="img"> 
+        <input type="file" formControlName="imagen">
 
         <input type="submit" class="btn btn-primary" value="Agregar"  
          (click)="onSubmit()" />
@@ -39,9 +42,9 @@
     <div class="error" *ngIf="formulario.controls['categoria_producto'].errors?.['required']  && formulario.controls['categoria_producto'].touched">
       <p>*El campo categoria es obligatorio</p>
     </div>
-   <!--  <div class="error" *ngIf="formulario.controls['subcategory'].errors?.['required']  && formulario.controls['subcategory'].touched">
+     <div class="error" *ngIf="formulario.controls['sub_categoria'].errors?.['required']  && formulario.controls['sub_categoria'].touched">
       <p>*El campo Subcategoria es obligatorio</p>
-    </div> -->
+    </div> 
     
     <div class="error" *ngIf="formulario.controls['precio_producto'].errors?.['precio_producto']  && formulario.controls['precio_producto'].touched">
       <p> El precio debe ser igual o mayor a 50  </p>
@@ -67,29 +70,33 @@
         <th>Sub-Categoria</th>
         <th>Precio</th>
         <th>Cantidad</th>
+        <th>Descripcion</th>
         <th>Imagen</th>
         <th>Modificar/Eliminar</th>
       </tr>
       <tr *ngFor="let item of arrProductos">
         <td>{{item.nombre_producto}} </td>
         <td>{{item.categoria_producto}}</td>
-        <td>C#</td>
+        <td>{{item.sub_categoria}} </td>
         <td>${{item.precio_producto}}</td>
-        <td>1</td>
-        <td><img [src]="item.imagen" alt="" /></td>
+        <td>{{item.cantidad}}</td>
+        <td>{{item.descripbr_producto}} </td>
+        <td><img [src]="item.imagen" alt="" class="imgwith" /></td>
         <td class="iconos">
-          <button href="#">
+          <button  [routerLink]="['/carrito/crud/',item.id]" >
             <img
               src="../../../assets/img/editar.png"
               alt="Modificar"
               width="30"
+              
             />
           </button>
-          <button href="#">
+          <button  (click)="delteproduct(item.id)">
             <img
               src="../../../assets/img/bote-de-basura.png"
               alt="Eliminar"
               width="30"
+              
             />
           </button>
         </td>
@@ -99,3 +106,4 @@
     </table>
   </div>
 </section>
+

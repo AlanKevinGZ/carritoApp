@@ -31,6 +31,9 @@ section{
 
 .tabla {
   margin: 0 auto;
+  th,td{
+    text-align: center;
+  }
 }
 
 .tabla-color {
@@ -61,4 +64,11 @@ input.ng-invalid{
   text-transform: uppercase;
   text-align: center;
   margin-top: 1rem;
+}
+
+.imgwith{
+  width: 14rem;
+  img{
+    width: 100%;
+  }
 }
