@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light p-3 mb-2 bg-info">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" routerLink="/login"><h3>CARRITO°</h3></a>
+  </div>
+</nav>
+
+<section>
+  <div class="centrado">
+    <h1>Agregar rol al usuario</h1>
+    <div class="detalles-usuario">
+      <form [formGroup]="formulario" >
+        <label for="name">id del usuario (verifica la tabla usuarios para saber el id): </label>
+        <input type="number" id="nombre" name="nombre" formControlName="id_usuario"/>
+
+        <label for="category">id del rol (el 1 es admin, el 2 es usuario): </label>
+        <input type="number" id="category" formControlName="id_rol"/>
+
+        <input type="submit" class="btn btn-primary" value="Agregar"  routerLink="/login/crud" (click)="register()"/>
+      </form>
+      <div class="imagen-producto">
+        <img src="../../../assets/img/roles.png" width="250" height="250" alt="Imagen login" title="Imagen login">
+      </div>
+    </div>
+    <!-- errores -->
+    <div class="error card-body" *ngIf="formulario.controls['id_usuario'].errors?.['required']  && formulario.controls['id_usuario'].touched">
+      <span class="form-text">*El campo id_usuario es obligatorio</span>
+    </div>
+    <div class="error card-body" *ngIf="formulario.controls['id_rol'].errors?.['required']  && formulario.controls['id_rol'].touched">
+      <span class="form-text">*El campo id_rol es obligatorio</span>
+    </div>
+    <!-- fin errores -->
+  </div>
+
+</section>
+

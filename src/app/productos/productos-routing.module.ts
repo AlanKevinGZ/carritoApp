@@ -8,14 +8,13 @@ import { MetodopagoComponent } from './metodopago/metodopago.component';
 
 
 const routes: Routes = [
-  { path:'', pathMatch:'full', redirectTo:'carrito'},
   { path:'carrito', component:CarritoComponent},
   {path:'carrito/pagos', component:MetodopagoComponent},
   {path: 'carrito/crud', component:AgregarproductosComponent},
   {path:'carrito/crud/:id', component:EditarComponent},
   {path:'carrito/:id', component:DetallesComponent},
- 
- 
+
+
 ];
 
 @NgModule({

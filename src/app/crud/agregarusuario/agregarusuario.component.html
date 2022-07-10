@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light p-3 mb-2 bg-info">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" routerLink="/login"><h3>CARRITO°</h3></a>
+  </div>
+</nav>
+
+<section>
+  <div class="centrado">
+    <h1>Agregar usuario</h1>
+    <div class="detalles-usuario">
+      <form [formGroup]="formulario" >
+
+        <label for="correo">Correo: </label>
+        <input type="text" id="correo" formControlName="correo"/>
+
+        <label for="password">Contraseña: </label>
+        <input type="text" id="password" formControlName="password"/>
+
+        <label for="calle">Calle: </label>
+        <input type="text" id="calle" name="nombre" formControlName="calle"/>
+
+        <input type="submit" class="btn btn-primary" value="Agregar"  routerLink="/login/crud" (click)="register()"/>
+      </form>
+      <div class="imagen-producto">
+        <img src="../../../assets/img/usuario.jpg" alt="Imagen login" title="Imagen login">
+      </div>
+    </div>
+    <!-- Mostrar los errores en pantalla  -->
+    <div class="error card-body" *ngIf="formulario.controls['nombre'].errors?.['required']  && formulario.controls['nombre'].touched">
+      <span class="form-text">*El campo nombre es obligatorio</span>
+    </div>
+    <div class="error card-body" *ngIf="formulario.controls['correo'].errors?.['required']  && formulario.controls['correo'].touched">
+      <span class="form-text">*El campo correo es obligatorio</span>
+    </div>
+    <div class="error card-body" *ngIf="formulario.controls['password'].errors?.['required']  && formulario.controls['password'].touched">
+      <span class="form-text">*El campo contraseña es obligatorio</span>
+    </div>
+    <!-- fin errores -->
+  </div>
+
+</section>

@@ -1,0 +1,64 @@
+<nav class="navbar navbar-expand-lg navbar-light p-3 mb-2 bg-info">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" routerLink="/login"><h3>CARRITO°</h3></a>
+  </div>
+</nav>
+
+<section>
+  <div class="centrado">
+    <h1>Agregar direccion del usuario</h1>
+    <div class="detalles-usuario">
+      <form [formGroup]="formulario" >
+        <label for="calle">Calle: </label>
+        <input type="text" id="calle" name="nombre" formControlName="calle"/>
+
+        <label for="numero">Numero: </label>
+        <input type="text" id="numero" formControlName="numero"/>
+
+        <label for="colonia">Colonia: </label>
+        <input type="text" id="colonia" formControlName="colonia"/>
+
+        <label for="municipio">Municipio: </label>
+        <input type="text" id="municipio" formControlName="municipio"/>
+
+        <label for="estado">Estado: </label>
+        <input type="text" id="estado" formControlName="estado"/>
+
+        <label for="pais">Pais: </label>
+        <input type="text" id="pais" formControlName="pais"/>
+
+        <label for="codigo_postal">Codigo Postal: </label>
+        <input type="text" id="codigo_postal" formControlName="codigo_postal"/>
+
+        <input type="submit" class="btn btn-primary" value="Agregar"  routerLink="/login/crud" (click)="register()"/>
+      </form>
+      <div class="imagen-producto">
+        <img src="../../../assets/img/ubicacion.jpeg" width="400" height="400" alt="Imagen login" title="Imagen login">
+      </div>
+    </div>
+    <!-- errores -->
+    <div class="error card-body" *ngIf="formulario.controls['calle'].errors?.['required']  && formulario.controls['calle'].touched">
+      <span class="form-text">*El campo calle es obligatorio</span>
+    </div>
+    <div class="error card-body" *ngIf="formulario.controls['numero'].errors?.['required']  && formulario.controls['numero'].touched">
+      <span class="form-text">*El campo numero es obligatorio</span>
+    </div>
+    <div class="error card-body" *ngIf="formulario.controls['colonia'].errors?.['required']  && formulario.controls['colonia'].touched">
+      <span class="form-text">*El campo colonia es obligatorio</span>
+    </div>
+    <div class="error card-body" *ngIf="formulario.controls['municipio'].errors?.['required']  && formulario.controls['municipio'].touched">
+      <span class="form-text">*El campo municipio es obligatorio</span>
+    </div>
+    <div class="error card-body" *ngIf="formulario.controls['estado'].errors?.['required']  && formulario.controls['estado'].touched">
+      <span class="form-text">*El campo estado es obligatorio</span>
+    </div>
+    <div class="error card-body" *ngIf="formulario.controls['pais'].errors?.['required']  && formulario.controls['pais'].touched">
+      <span class="form-text">*El campo pais es obligatorio</span>
+    </div>
+    <div class="error card-body" *ngIf="formulario.controls['codigo_postal'].errors?.['required']  && formulario.controls['codigo_postal'].touched">
+      <span class="form-text">*El campo codigo postal es obligatorio</span>
+    </div>
+    <!-- fin errores -->
+  </div>
+
+</section>

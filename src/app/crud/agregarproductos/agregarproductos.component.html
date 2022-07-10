@@ -11,13 +11,13 @@
 
         <label for="sub-category">Subcategoria: </label>
        <input type="text" id="sub-category" formControlName="sub_categoria"/>
- 
+
         <label for="price">Precio: </label>
         <input type="number" id="price" formControlName="precio_producto"  />
 
         <label for="price">Cantidad: </label>
         <input type="number" id="price" formControlName="cantidad"  />
-      
+
 
         <label for="des-gen">Descripcion general: </label>
        <textarea name="" id="" cols="30" rows="10" formControlName="descripbr_producto"></textarea>
@@ -25,13 +25,13 @@
         <label for="img">Agregar Imagen</label>
         <input type="file" formControlName="imagen">
 
-        <input type="submit" class="btn btn-primary" value="Agregar"  
+        <input type="submit" class="btn btn-primary" value="Agregar"
          (click)="onSubmit()" />
 
       </form>
 
       <div class="imagen-producto">
-       
+
         <img src="../../../assets/img/caja.png" alt="Imagen producto" title="Imagen producto">
     </div>
     </div>
@@ -44,20 +44,16 @@
     </div>
      <div class="error" *ngIf="formulario.controls['sub_categoria'].errors?.['required']  && formulario.controls['sub_categoria'].touched">
       <p>*El campo Subcategoria es obligatorio</p>
-    </div> 
-    
+    </div>
+
     <div class="error" *ngIf="formulario.controls['precio_producto'].errors?.['precio_producto']  && formulario.controls['precio_producto'].touched">
       <p> El precio debe ser igual o mayor a 50  </p>
     </div>
     <div class="error" *ngIf="formulario.controls['descripbr_producto'].errors?.['required']  && formulario.controls['descripbr_producto'].touched">
       <p>*El campo Descripcion  es obligatorio</p>
     </div>
-  
     <!-- fin errores -->
-
   </div>
-
-  
 </section>
 
 <!-- tabla -->
@@ -88,7 +84,6 @@
               src="../../../assets/img/editar.png"
               alt="Modificar"
               width="30"
-              
             />
           </button>
           <button  (click)="delteproduct(item.id)">
@@ -96,13 +91,10 @@
               src="../../../assets/img/bote-de-basura.png"
               alt="Eliminar"
               width="30"
-              
             />
           </button>
         </td>
       </tr>
-      
-       
     </table>
   </div>
 </section>

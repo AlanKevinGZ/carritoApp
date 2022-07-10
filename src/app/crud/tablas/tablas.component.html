@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-light p-3 mb-2 bg-info">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" routerLink="/login"><h3>CARRITO°</h3></a>
+  </div>
+</nav>
+
+<section>
+  <div class="centrado2">
+    <h1>Tabla de usuarios </h1>
+    <table class="tabla">
+      <tr class="tabla-color">
+        <th>id_usuario</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Password</th>
+      </tr>
+      <tr *ngFor="let item of arrusuario">
+        <td>{{item.id_usuario}} </td>
+        <td>{{item.nombre}} </td>
+        <td>{{item.correo}}</td>
+        <td>{{item.password}} </td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="centrado3">
+    <h1>Tabla de direcciones</h1>
+    <table class="tabla">
+      <tr class="tabla-color">
+        <th>id_usuario</th>
+        <th>Calle</th>
+        <th>Numero</th>
+        <th>Colonia</th>
+        <th>Municipio</th>
+        <th>Estado</th>
+        <th>Pais</th>
+        <th>Codigo_postal</th>
+      </tr>
+      <tr *ngFor="let item of arrdireccion">
+        <td>{{item.id_usuario}} </td>
+        <td>{{item.calle}}</td>
+        <td>{{item.numero}}</td>
+        <td>{{item.colonia}} </td>
+        <td>{{item.municipio}} </td>
+        <td>{{item.estado}} </td>
+        <td>{{item.pais}} </td>
+        <td>{{item.codigo_postal}} </td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="centrado4">
+    <h1>Tabla de userrol</h1>
+    <table class="tabla">
+      <tr class="tabla-color">
+        <th>id_userrol</th>
+        <th>id_usuario</th>
+        <th>id_rol</th>
+        <th>Nombre</th>
+        <th>Nombre_rol</th>
+      </tr>
+      <tr *ngFor="let item of arruserrol">
+        <td>{{item.id_userrol}} </td>
+        <td>{{item.id_usuario}} </td>
+        <td>{{item.id_rol}} </td>
+        <td>{{item.nombre}} </td>
+        <td>{{item.nombre_rol}}</td>
+      </tr>
+    </table>
+  </div>
+</section>

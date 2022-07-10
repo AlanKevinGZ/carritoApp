@@ -16,7 +16,7 @@ export class EditarComponent implements OnInit {
    id:any=0;
 
   formulario:FormGroup=new FormGroup({
-   
+
     nombre_producto:new FormControl('',[
       Validators.required,
       Validators.minLength(3),
@@ -28,8 +28,8 @@ export class EditarComponent implements OnInit {
     sub_categoria:new FormControl('',[
       Validators.required,
       Validators.minLength(3),
-    ]), 
-    
+    ]),
+
     precio_producto:new FormControl('',[this.costoValidator]),
     cantidad:new FormControl('',[this.costoValidator]),
 
@@ -47,35 +47,34 @@ export class EditarComponent implements OnInit {
 
   ngOnInit(): void {
     let param=this.activeRoute.snapshot.params;
-   
+
     if (param['id']) {
       this.serviceProdut.getProductID(param['id'])
       .subscribe(
         res=>{
-          this.id=param['id'];     
+          this.id=param['id'];
           this.objT=res;
 
-          this.formulario.controls['nombre_producto'].setValue(this.objT[0]['nombre_producto']); 
-          this.formulario.controls['categoria_producto'].setValue(this.objT[0]['categoria_producto']); 
-          this.formulario.controls['sub_categoria'].setValue(this.objT[0]['sub_categoria']); 
-          this.formulario.controls['precio_producto'].setValue(this.objT[0]['precio_producto']); 
-          this.formulario.controls['cantidad'].setValue(this.objT[0]['cantidad']); 
-          this.formulario.controls['descripbr_producto'].setValue(this.objT[0]['descripbr_producto']); 
-          
+          this.formulario.controls['nombre_producto'].setValue(this.objT[0]['nombre_producto']);
+          this.formulario.controls['categoria_producto'].setValue(this.objT[0]['categoria_producto']);
+          this.formulario.controls['sub_categoria'].setValue(this.objT[0]['sub_categoria']);
+          this.formulario.controls['precio_producto'].setValue(this.objT[0]['precio_producto']);
+          this.formulario.controls['cantidad'].setValue(this.objT[0]['cantidad']);
+          this.formulario.controls['descripbr_producto'].setValue(this.objT[0]['descripbr_producto']);
+
           this.imgUrl=this.objT[0]['imagen'];
-  
+
         },
         err=>console.log(err)
-        
+
       )
     }
-    
   }
 
 
   onSubmit(){
     console.log(this.formulario.value);
-  
+
      this.serviceProdut.updateProduct(this.id,this.formulario.value)
       .subscribe(
         res=>{
@@ -90,28 +89,27 @@ export class EditarComponent implements OnInit {
          }, 1500);
         },
         err=>console.log(err)
-        
       )
   }
 
    /* validacion de campos */
    img(formControl:any){
-    
+
     let valor=formControl.value;
-  
+
     if (valor) {
-    
+
       valor= valor.substring(valor.lastIndexOf('\\')+1);
-    
+
       formControl.value='../../assets/img/'+valor;
-    
+
       return formControl.value;
-     
+
     }else{
       return null;
     }
-    
-    
+
+
     }
 
   costoValidator(formControl:any){
@@ -125,7 +123,7 @@ export class EditarComponent implements OnInit {
     }else{
       return {costo:{max,min}};
     }
-   
+
   }
 
 

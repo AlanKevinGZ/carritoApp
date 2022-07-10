@@ -1,0 +1,73 @@
+section{
+  margin: 30px 0;
+}
+
+.centrado {
+  margin: 0 auto;
+  max-width: 700px;
+  h1 {
+    text-align: left;
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+.detalles-usuario {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  column-gap: 20px;
+  border: 2px solid #06BEE1;
+  padding: 20px;
+  form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+    input[type="text"] {
+      border: 1px solid #06BEE1
+    }
+  }
+}
+
+.tabla {
+  margin: 0 auto;
+  th,td{
+    text-align: center;
+  }
+}
+
+.tabla-color {
+  background-color: #06BEE1;
+  color: #fff;
+  th {
+    padding: 20px;
+  }
+}
+
+.iconos a{
+  margin: 0 5px;
+}
+
+input.ng-valid{
+  border: 1px solid green !important;
+}
+
+input.ng-invalid{
+  border: 1px solid red !important;
+}
+.btn{
+  background-color: #06BEE1;
+  color: white;
+}
+.error{
+  color: red;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.imgwith{
+  width: 14rem;
+  img{
+    width: 100%;
+  }
+}

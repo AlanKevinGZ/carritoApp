@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light p-3 mb-2 bg-info">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white" routerLink="/login"><h3>CARRITO°</h3></a>
+  </div>
+</nav>
+<div class="d-flex" style="height: 150px;">
+  <div class="vr"></div>
+</div>
+
+<form [formGroup]="formulario" class="card w-25 mx-auto">
+  <div class="card-body text-center">
+    <h3>Recuperar contraseña</h3>
+    <span class="form-text">Todos los campos son obligatorios</span>
+  </div>
+  <div class=" card-body">
+    <label for="exampleInputEmail1" class="form-label">Email</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="correo">
+  </div>
+  <div class="error card-body" *ngIf="formulario.controls['correo'].errors?.['required']  && formulario.controls['correo'].touched">
+    <span class="form-text">*El campo correo es obligatorio</span>
+  </div>
+  <div class=" card-body d-flex justify-content-between">
+    <button type="button" class="btn btn-info" routerLink="/login">Regresar</button>
+    <button type="button" class="btn btn-info" >Enviar</button>
+  </div>
+</form>
+<div class="d-flex" style="height: 181px;">
+  <div class="vr"></div>
+</div>
+
+<footer id="footer" class="footer">
+  <div class="cen">
+    <div class="row ">
+      <div class="four columns ">
+        <nav id="secundaria" class="menu">
+          <a class="enlace" href="#">¿Quienes Somos?</a>
+          <a class="enlace" href="#">Soporte</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>
