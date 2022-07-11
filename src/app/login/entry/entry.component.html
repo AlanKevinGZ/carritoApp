@@ -14,21 +14,20 @@
   </div>
   <div class=" card-body">
     <label for="exampleInputEmail1" class="form-label">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="correo" [ngModel]="login.correo">
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="correo">
   </div>
   <div class="error card-body" *ngIf="formulario.controls['correo'].errors?.['required']  && formulario.controls['correo'].touched">
     <span class="form-text">*El campo correo es obligatorio</span>
   </div>
   <div class=" card-body">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="contraseña" [ngModel]="login.password">
+    <input type="password" class="form-control" id="exampleInputPassword1" formControlName="password">
   </div>
   <div class="error card-body" *ngIf="formulario.controls['password'].errors?.['required']  && formulario.controls['password'].touched">
     <span class="form-text">*El campo contraseña es obligatorio</span>
   </div>
   <div class=" card-body d-flex justify-content-between">
-    <button type="button" class="btn btn-info" >Entrar</button>
-    <button type="button" class="btn btn-info" routerLink="/login/recover">Recuperar contraseña</button>
+    <button type="button" class="btn btn-info" (click)="logIn()">Entrar</button>
     <button type="button" class="btn btn-info" routerLink="/login/register">Registrar</button>
   </div>
 </form>

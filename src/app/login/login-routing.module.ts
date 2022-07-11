@@ -8,21 +8,21 @@ import {AgregarudrComponent} from "../crud/agregarudr/agregarudr.component";
 import {EditarusuarioComponent} from "../crud/editarusuario/editarusuario.component";
 import {AgregarusuarioComponent} from "../crud/agregarusuario/agregarusuario.component";
 import {AgregardireccionComponent} from "../crud/agregardireccion/agregardireccion.component";
-import {AgregarrolComponent} from "../crud/agregarrol/agregarrol.component";
 import {TablasComponent} from "../crud/tablas/tablas.component";
+import {AuthGuard} from "../guards/auth.guard";
+import {RolGuard} from "../guards/rol.guard";
 
 const routes: Routes = [
   { path:'', pathMatch:'full', redirectTo:'login'},
-  { path:'login', component:EntryComponent},
+  { path:'login', component:EntryComponent,/* canActivate: [AuthGuard]*/},
   {path:'login/register', component:RegisterComponent},
   {path:'login/registerd', component:RegisterdComponent},
-  {path:'login/recover', component:RecoverComponent},
-  {path:'login/crud', component:AgregarudrComponent},
-  {path:'login/crud/user', component:AgregarusuarioComponent},
-  {path:'login/crud/dirc', component:AgregardireccionComponent},
-  {path:'login/crud/rol', component:AgregarrolComponent},
-  {path:'login/crud/tablas', component:TablasComponent},
-  {path:'login/crud/:id', component:EditarusuarioComponent},
+  {path:'login/recover', component:RecoverComponent,/* canActivate: [AuthGuard]*/},
+  {path:'login/crud', component:AgregarudrComponent,/*canActivate: [RolGuard], data: {Rol:'2'}*/},
+  {path:'login/crud/user', component:AgregarusuarioComponent,/* canActivate: [AuthGuard]*/},
+  {path:'login/crud/dirc', component:AgregardireccionComponent,/* canActivate: [AuthGuard]*/},
+  {path:'login/crud/tablas', component:TablasComponent,/* canActivate: [AuthGuard]*/},
+  {path:'login/crud/:id', component:EditarusuarioComponent,/* canActivate: [AuthGuard]*/},
 ];
 
 @NgModule({

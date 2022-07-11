@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {LoginService} from "../../services/login.service";
 import Swal from "sweetalert2";
-import {ActivatedRoute, Router} from "@angular/router";
-import {HttpClient} from "@angular/common/http";
+import { Router} from "@angular/router";
 declare var ventana4:any;
 @Component({
   selector: 'app-entry',
@@ -22,53 +21,36 @@ export class EntryComponent implements OnInit {
     ]),
   });
 
-  login = {
-    correo: null,
-    password: null
-  }
+  constructor(private loginservice: LoginService, private router:Router) {
 
-  /*loginbtn:boolean;
-  logoutnbtn:boolean;*/
-  constructor(private loginservice: LoginService,private formbuilder:FormBuilder, private http:HttpClient, private router:Router) {
-    /*this.loginservice.loginUsuario.subscribe(name => this.changeName(name));
-    if(this.loginservice.logged()){
-      console.log("loggedin");
-      this.loginbtn=false;
-      this.logoutnbtn=true;
-    }else{
-      this.loginbtn=true;
-      this.logoutnbtn=false;
-    }*/
   }
-
-  /*private changeName(name: boolean): void{
-    this.logoutnbtn=name;
-    this.loginbtn=!name;
-  }
-  logout(){
-    this.loginservice.deletetoken(){
-      window.location.href = "/login";
-    }
-  }*/
 
   ngOnInit(): void {
   }
 
-  /*loginUsuario(){
-    this.loginservice.loginUsuario(this.formulario.value.email,this.formulario.value.password)
-      .pipe(first())
-      .subscribe(
-        data =>{
-          const redirect = this.loginservice.redirecturl ? this.loginservice.redirecturl : 'carrito';
-          this.router.navigate(redirect);
-        },
-        error => {
-          Swal.fire(
-            'Oops...',
-            'Usuario o contraseña incorrecto',
-            'error'
-          )
-        }
-      )
-  }*/
+  logIn(){
+    console.log(this.formulario.value);
+    this.loginservice.postlogin(this.formulario.value).subscribe((res:any) => {
+      if((res.length>0)){
+        console.log(res);
+        Swal.fire(
+          'Usuario encontrado',
+          'El usuario esta registrado',
+          'success'
+        )
+        localStorage.setItem('Token', res.token);
+        this.router.navigate(['/carrito']);
+      }else{
+        console.log(res);
+        Swal.fire(
+          'Usuario no encontrado',
+          'El usuario no esta registrado',
+          'error'
+        )
+        this.router.navigate(['/login']);
+      }
+    },
+        err=> console.log(err)
+    )
+  }
 }

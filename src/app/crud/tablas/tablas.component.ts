@@ -25,6 +25,10 @@ export class TablasComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
     ]),
+    id_rol: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
     calle: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
@@ -67,7 +71,7 @@ export class TablasComponent implements OnInit {
     this.loginservice.getdireccion().subscribe((direccion) => {
       this.arrdireccion = direccion;
     });
-    this.loginservice.getuserrol().subscribe((userrol) => {
+    this.loginservice.getrol().subscribe((userrol) => {
       this.arruserrol = userrol;
     });
   }

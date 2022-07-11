@@ -13,12 +13,14 @@
         <th>Nombre</th>
         <th>Correo</th>
         <th>Password</th>
+        <th>id_rol</th>
       </tr>
       <tr *ngFor="let item of arrusuario">
         <td>{{item.id_usuario}} </td>
         <td>{{item.nombre}} </td>
         <td>{{item.correo}}</td>
         <td>{{item.password}} </td>
+        <td>{{item.id_rol}} </td>
       </tr>
     </table>
   </div>
@@ -54,19 +56,15 @@
 
 <section>
   <div class="centrado4">
-    <h1>Tabla de userrol</h1>
+    <h1>Tabla de rol</h1>
     <table class="tabla">
       <tr class="tabla-color">
-        <th>id_userrol</th>
         <th>id_usuario</th>
-        <th>id_rol</th>
         <th>Nombre</th>
         <th>Nombre_rol</th>
       </tr>
       <tr *ngFor="let item of arruserrol">
-        <td>{{item.id_userrol}} </td>
         <td>{{item.id_usuario}} </td>
-        <td>{{item.id_rol}} </td>
         <td>{{item.nombre}} </td>
         <td>{{item.nombre_rol}}</td>
       </tr>

@@ -6,7 +6,6 @@ import { EditarComponent } from './editar/editar.component';
 import { RouterModule } from '@angular/router';
 import { AgregarusuarioComponent } from './agregarusuario/agregarusuario.component';
 import { AgregardireccionComponent } from './agregardireccion/agregardireccion.component';
-import { AgregarrolComponent } from './agregarrol/agregarrol.component';
 import { AgregarudrComponent } from './agregarudr/agregarudr.component';
 import { EditarusuarioComponent } from './editarusuario/editarusuario.component';
 import { TablasComponent } from './tablas/tablas.component';
@@ -19,7 +18,6 @@ import { TablasComponent } from './tablas/tablas.component';
     EditarComponent,
     AgregarusuarioComponent,
     AgregardireccionComponent,
-    AgregarrolComponent,
     AgregarudrComponent,
     EditarusuarioComponent,
     TablasComponent
@@ -29,8 +27,8 @@ import { TablasComponent } from './tablas/tablas.component';
     FormsModule,
     RouterModule,
     ReactiveFormsModule,
-    
+
   ],
-  
+
 })
 export class CrudModule { }

@@ -23,6 +23,10 @@ export class RegisterComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
     ]),
+    id_rol: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
   });
 
   arrusuario: any = [];

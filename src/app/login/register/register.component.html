@@ -38,6 +38,13 @@
   <div class="error card-body" *ngIf="formulario.controls['password'].errors?.['required']  && formulario.controls['password'].touched">
     <span class="form-text">*El campo contraseña es obligatorio</span>
   </div>
+  <div class=" card-body">
+    <label for="exampleInputPassword1" class="form-label">Rol(1 es admin, 2 es usuario</label>
+    <input type="number" class="form-control" id="exampleInputPassword2" formControlName="id_rol">
+  </div>
+  <div class="error card-body" *ngIf="formulario.controls['id_rol'].errors?.['required']  && formulario.controls['id_rol'].touched">
+    <span class="form-text">*El campo Rol es obligatorio</span>
+  </div>
   <div class=" card-body d-flex justify-content-between">
     <button type="button" class="btn btn-info" routerLink="/login">Regresar</button>
     <button type="button" class="btn btn-info" (click)="register()">Guardar</button>

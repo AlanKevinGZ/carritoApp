@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ProductService} from "../../services/product.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {LoginService} from "../../services/login.service";
 import Swal from "sweetalert2";
@@ -24,6 +23,10 @@ export class EditarusuarioComponent implements OnInit {
       Validators.minLength(3),
     ]),
     password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    nombre_rol: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
     ]),

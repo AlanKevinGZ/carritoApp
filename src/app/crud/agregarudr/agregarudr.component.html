@@ -21,16 +21,8 @@
             <button type="button" class="btn btn-info" routerLink="/login/crud/dirc">Entrar</button>
           </div>
           <div class=" card-body">
-            <h5> Ingresar aqui para registrar el rol del usuario creado</h5>
-            <button type="button" class="btn btn-info" routerLink="/login/crud/rol">Entrar</button>
-          </div>
-        </div>
-        <div class="card ">
-          <div class=" d-flex justify-content-center">
-            <div>
-              <h5> Ingresar aqui para verificar las tablas</h5>
-              <button type="button" class="btn btn-info" routerLink="/login/crud/tablas">Entrar</button>
-            </div>
+            <h5> Ingresar aqui para verificar las tablas</h5>
+            <button type="button" class="btn btn-info" routerLink="/login/crud/tablas">Entrar</button>
           </div>
         </div>
       </div>
@@ -41,52 +33,54 @@
 <section>
   <div class="centrado">
     <h1>Tabla de usuarios, direccion y rol</h1>
-    <table class="tabla">
-      <tr class="tabla-color">
-        <th>id_usuario</th>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Password</th>
-        <th>Nombre_rol</th>
-        <th>Calle</th>
-        <th>Numero</th>
-        <th>Colonia</th>
-        <th>Municipio</th>
-        <th>Estado</th>
-        <th>Pais</th>
-        <th>Codigo_postal</th>
-        <th>Modificar/Eliminar</th>
-      </tr>
-      <tr *ngFor="let item of arrusuariodr">
-        <td>{{item.id_usuario}} </td>
-        <td>{{item.nombre}} </td>
-        <td>{{item.correo}}</td>
-        <td>{{item.password}} </td>
-        <td>{{item.nombre_rol}}</td>
-        <td>{{item.calle}}</td>
-        <td>{{item.numero}}</td>
-        <td>{{item.colonia}} </td>
-        <td>{{item.municipio}} </td>
-        <td>{{item.estado}} </td>
-        <td>{{item.pais}} </td>
-        <td>{{item.codigo_postal}} </td>
-        <td class="iconos">
-          <button  [routerLink]="['/login/crud/',item.id_usuario]" >
-            <img
-              src="../../../assets/img/editar.png"
-              alt="Modificar"
-              width="30"
-            />
-          </button>
-          <button  (click)="delete(item.id_usuario)">
-            <img
-              src="../../../assets/img/bote-de-basura.png"
-              alt="Eliminar"
-              width="30"
-            />
-          </button>
-        </td>
-      </tr>
-    </table>
+    <div class="card">
+      <table class="tabla">
+        <tr class="tabla-color">
+          <th>id_usuario</th>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Password</th>
+          <th>Nombre_rol</th>
+          <th>Calle</th>
+          <th>Numero</th>
+          <th>Colonia</th>
+          <th>Municipio</th>
+          <th>Estado</th>
+          <th>Pais</th>
+          <th>Codigo_postal</th>
+          <th>Modificar/Eliminar</th>
+        </tr>
+        <tr *ngFor="let item of arrusuariodr">
+          <td>{{item.id_usuario}} </td>
+          <td>{{item.nombre}} </td>
+          <td>{{item.correo}}</td>
+          <td>{{item.password}} </td>
+          <td>{{item.nombre_rol}}</td>
+          <td>{{item.calle}}</td>
+          <td>{{item.numero}}</td>
+          <td>{{item.colonia}} </td>
+          <td>{{item.municipio}} </td>
+          <td>{{item.estado}} </td>
+          <td>{{item.pais}} </td>
+          <td>{{item.codigo_postal}} </td>
+          <td class="iconos">
+            <button  [routerLink]="['/login/crud/',item.id_usuario]" >
+              <img
+                src="../../../assets/img/editar.png"
+                alt="Modificar"
+                width="30"
+              />
+            </button>
+            <button  (click)="delete(item.id_usuario)">
+              <img
+                src="../../../assets/img/bote-de-basura.png"
+                alt="Eliminar"
+                width="30"
+              />
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
   </div>
 </section>
