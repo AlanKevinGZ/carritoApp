@@ -51,7 +51,6 @@ export class AgregarproductosComponent implements OnInit {
   /* crear */
   onSubmit() {
     console.log(this.formulario.value);
-
     this.serviceProdut.saveProduct(this.formulario.value).subscribe(
       (res) => {
         console.log(res);

@@ -40,7 +40,7 @@
           <th>Nombre</th>
           <th>Correo</th>
           <th>Password</th>
-          <th>Nombre_rol</th>
+          <th>id_rol</th>
           <th>Calle</th>
           <th>Numero</th>
           <th>Colonia</th>
@@ -55,7 +55,7 @@
           <td>{{item.nombre}} </td>
           <td>{{item.correo}}</td>
           <td>{{item.password}} </td>
-          <td>{{item.nombre_rol}}</td>
+          <td>{{item.id_rol}}</td>
           <td>{{item.calle}}</td>
           <td>{{item.numero}}</td>
           <td>{{item.colonia}} </td>
@@ -71,7 +71,7 @@
                 width="30"
               />
             </button>
-            <button  (click)="delete(item.id_usuario)">
+            <button (click)="delete(item.id_usuario)">
               <img
                 src="../../../assets/img/bote-de-basura.png"
                 alt="Eliminar"

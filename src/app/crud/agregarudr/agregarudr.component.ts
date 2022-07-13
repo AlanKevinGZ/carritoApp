@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ProductService} from "../../services/product.service";
 import {LoginService} from "../../services/login.service";
 import Swal from "sweetalert2";
 
@@ -23,7 +22,7 @@ export class AgregarudrComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
     ]),
-    nombre_rol: new FormControl('', [
+    id_rol: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
     ]),
@@ -77,7 +76,8 @@ export class AgregarudrComponent implements OnInit {
       reverseButtons: true,
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Eliminado!', 'Su usuario ha sido eliminado.', 'success');
+        Swal.fire('Eliminado!', 'El usuario ha sido eliminado.', 'success');
+        /*  console.log(id); */
         this.arrusuariodr.forEach((i: any, e: any) => {
           if (id == i.id_usuario) {
             console.log(i);
@@ -91,6 +91,7 @@ export class AgregarudrComponent implements OnInit {
           (err) => console.log(err)
         );
       } else if (
+        /* Read more about handling dismissals below */
         result.dismiss === Swal.DismissReason.cancel
       ) {
         Swal.fire('Cancelado', 'Se ha cancelado la operacion', 'error');

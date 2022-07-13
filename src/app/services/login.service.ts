@@ -44,7 +44,7 @@ export class LoginService {
   }
 
   update(id:number | string, update:any):Observable<any>{
-    return this.http.put(`http://localhost:3000/api/productos/${id}`,update)
+    return this.http.put(`http://localhost:3000/api/login/${id}`,update)
   }
 
   postlogin(usuario:any){

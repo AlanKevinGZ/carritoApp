@@ -11,7 +11,7 @@ import Swal from "sweetalert2";
 })
 export class EditarusuarioComponent implements OnInit {
   objT:any={};
-  id:any=0;
+  id_usuario:any=0;
 
   formulario: FormGroup = new FormGroup({
     nombre: new FormControl('', [
@@ -23,10 +23,6 @@ export class EditarusuarioComponent implements OnInit {
       Validators.minLength(3),
     ]),
     password: new FormControl('', [
-      Validators.required,
-      Validators.minLength(3),
-    ]),
-    nombre_rol: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
     ]),
@@ -71,7 +67,7 @@ export class EditarusuarioComponent implements OnInit {
       this.loginservice.getuserid(param['id'])
         .subscribe(
           res=>{
-            this.id=param['id_usuario'];
+            this.id_usuario=param['id_usuario'];
             this.objT=res;
             this.formulario.controls['nombre'].setValue(this.objT[0]['nombre']);
             this.formulario.controls['correo'].setValue(this.objT[0]['correo']);
@@ -92,21 +88,24 @@ export class EditarusuarioComponent implements OnInit {
 
   update(){
     console.log(this.formulario.value);
-    this.loginservice.update(this.id,this.formulario.value)
-      .subscribe(
-        res=>{
-          console.log(res);
-          Swal.fire(
-            'Usuario Modificado',
-            'Se Modifico Correctamente',
-            'info'
-          )
-          setTimeout(() => {
-            this.router.navigate(['/login/crud']);
-          }, 1500);
-        },
-        err=>console.log(err)
-      )
+    let param=this.activeRoute.snapshot.params;
+    if (param['id']) {
+      this.loginservice.update(param['id'], this.formulario.value)
+        .subscribe(
+          res => {
+            console.log(res);
+            Swal.fire(
+              'Usuario Modificado',
+              'Se Modifico Correctamente',
+              'info'
+            )
+            setTimeout(() => {
+              this.router.navigate(['/login/crud']);
+            }, 1500);
+          },
+          err => console.log(err)
+        )
+    }
   }
 
 }
